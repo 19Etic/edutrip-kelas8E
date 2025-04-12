@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUTRIP YOGYAKARTA 2025 - ERIC/8E</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --bg-light: linear-gradient(270deg, #fff4e6, #ffd6a5, #fcd5ce, #fae1dd);
+            --bg-dark: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460, #533d7a);
+            --text-light: #333;
+            --text-dark: #f0f0f0;
+            --card-bg-light: #ffffff;
+            --card-bg-dark: #2d3748;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-light);
+            background-size: 800% 800%;
+            animation: animatedGradient 20s ease infinite;
+            color: var(--text-light);
+            transition: all 0.5s ease;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, var(--primary), #FF8E8E);
+            color: white;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .main-header {
+            background: linear-gradient(to right, #6b2d5c, #8e44ad);
+        }
+
+        .main-header.scrolled {
+            padding: 10px 30px;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 107, 107, 0.9);
+        }
+
+        .dark-mode .main-header.scrolled {
+            background: rgba(107, 45, 92, 0.9);
+        }
+
+        .logo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dark-mode .logo-title {
+            background: linear-gradient(to right, #ffffff, #b8c0ff);
+            -webkit-background-clip: text;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .theme-switch {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-switch:hover {
+            transform: rotate(30deg);
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin: 50px auto 30px;
+            width: 100%;
+            display: block;
+            position: relative;
+        }
+
+        .dark-mode .page-title {
+            color: #b8c0ff;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        table {
+            margin: 40px auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 85%;
+            max-width: 1000px;
+            font-size: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            background: var(--card-bg-light);
+            transition: all 0.5s ease;
+        }
+
+        .dark-mode table {
+            background: var(--card-bg-dark);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        thead {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .dark-mode thead {
+            background: linear-gradient(to right, #6b2d5c, #8e44ad);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .dark-mode th, .dark-mode td {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: rgba(78, 205, 196, 0.1);
+        }
+
+        .dark-mode tbody tr:hover {
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .question-card {
+            background: var(--card-bg-light);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .question-card {
+            background: var(--card-bg-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .question-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .dark-mode .question-number {
+            background: #8e44ad;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            padding: 15px;
+            background: rgba(255, 235, 205, 0.3);
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .answer-text {
+            background: rgba(46, 52, 64, 0.5);
+        }
+
+        .interview-list {
+            background: rgba(255, 235, 205, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .dark-mode .interview-list {
+            background: rgba(46, 52, 64, 0.5);
+        }
+
+        .interview-list h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .dark-mode .interview-list h3 {
+            color: #b8c0ff;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px dashed var(--secondary);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .dark-mode .image-container::before {
+            border-color: #8e44ad;
+        }
+
+        img {
+            max-width: 60%;  /* Reduced from 90% */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to right, var(--primary), #FF8E8E);
+            color: white;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+
+        .dark-mode footer {
+            background: linear-gradient(to right, #6b2d5c, #8e44ad);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .dark-mode .back-to-top {
+            background: #8e44ad;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--secondary);
+        }
+
+        .dark-mode .back-to-top:hover {
+            background: #b8c0ff;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes animatedGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            table {
+                width: 95%;
+                font-size: 0.9rem;
+            }
+            
+            img {
+            max-width: 50%;  /* Changed from 90% to 50% to make image smaller */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-header">
+        <div class="logo-title">EDUTRIP YOGYAKARTA 2025</div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="agama.html">Agama</a>
+            <a href="pkn.html">PPKN</a>
+            <a href="bahasaindonesia.html">Bahasa</a>
+            <a href="bahasainggris.html">English</a>
+            <a href="ips.html">IPS</a>
+            <button class="theme-switch" id="themeSwitch">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </div>
+
+    <h1 class="page-title">✨ Live-In Experience ✨</h1>
+
+    <div class="question-card">
+        <div class="question-text">
+            <span class="question-number">1</span>
+            Pengalaman membajak sawah menggunakan kerbau/sapi! Wawancarai fasilitator di Desa Pentingsari untuk menanyakan mengenai tujuan membajak sawah!
+        </div>
+        <div class="answer-text">
+            Tujuan membajak sawah adalah agar sawahnya rata.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="question-text">
+            <span class="question-number">2</span>
+            Pengalaman menaiki candi Prambanan! Wawancarai satu wisatawan asing dan domestik untuk meminta pendapat mereka tentang warisan peradaban!
+        </div>
+        <div class="answer-text">
+            <p><strong>WNA:</strong> Tempatnya bagus, bersih dan sangat mahal untuk di jaga.</p>
+            <p><strong>WNI:</strong> Bagus, bersih, kondisinya masih sangat bagus dan belum rusak, dan budayanya sangat terasa.</p>
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="question-text">
+            <span class="question-number">3</span>
+            Wawancarai fasilitator mengenai karakteristik masyarakat berburu & meramu beserta faktor penyebab pergantian cara hidupnya!
+        </div>
+        <div class="answer-text">
+            Berburu secara berkelompok, Senjata batu, tombak, ulam, berpindah tempat karena ketersediaan makanan.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="question-text">
+            <span class="question-number">4</span>
+            Jadilah bagian dari masyarakat di Desa Pentingsari dengan meluangkan waktu bersama induk semang (orangtua yang bertanggungjawab di tempat kalian Live-In) serta anggota keluarga lainnya.
+        </div>
+        <div class="answer-text">
+            <div class="interview-list">
+                <h3>Wawancarai induk semang/tuan rumah serta anggota keluarga untuk menanyakan hal berikut:</h3>
+                <ol>
+                    <li>Mata pencaharian/pekerjaan</li>
+                    <li>Riwayat bangunan tempat tinggal</li>
+                    <li>Tradisi keluarga</li>
+                    <li>Tradisi masyarakat</li>
+                    <li>Pengelolaan keuangan</li>
+                    <li>Pengelolaan lingkungan</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="Live in 1.jpg" alt="Live-In Experience" class="floating">
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 EDUTRIP YOGYAKARTA - ERIC/8E. All rights reserved.</p>
+            <p>Created with <i class="fas fa-heart" style="color: var(--accent);"></i> for educational purposes</p>
+        </div>
+    </footer>
+
+    <div class="image-container">
+        <img src="Live in 1.jpg" alt="Live-In Experience" class="floating">
+    </div>
+
+
+    <script>
+        // Dark mode toggle
+        const themeSwitch = document.getElementById('themeSwitch');
+        const body = document.body;
+
+        themeSwitch.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Scroll header effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Image hover effect
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                this.classList.toggle('zoom');
+            });
+        });
+
+        // Animate question cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EDUTRIP YOGYAKARTA 2025 - ERIC/8E</title>
+
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet"/>
+
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #8f1414;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            position: relative;
+        }
+
+        header a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background-color: bisque;
+            transition: 0.3s;
+        }
+
+        header a:hover::after {
+            width: 100%;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 42px;
+            text-align: center;
+            color: #222;
+        }
+
+        p {
+            font-size: 22px;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: justify;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 50px auto;
+        }
+
+        .image-gallery a img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery a img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            header a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #005f73, #0a9396, #94d2bd);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    padding: 12px 30px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffe082;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 17px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: rgba(255,255,255,0.05);
+}
+
+.nav-links li a:hover {
+    background: #ffb703;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+    <header class="navbar" data-aos="fade-down">
+        <div class="container">
+            <div class="logo">
+                🌿 EDUTRIP 2025
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="agama.html">Agama</a></li>
+                    <li><a href="pkn.html">PPKN</a></li>
+                    <li><a href="bahasaindonesia.html">Bahasa Indonesia</a></li>
+                    <li><a href="bahasainggris.html">English</a></li>
+                    <li><a href="bahasamandarin.html">Mandarin</a></li>
+                    <li><a href="ips.html">IPS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    <h1 data-aos="fade-up">我在 Pentingsari 村庄</h1>
+
+    <p data-aos="fade-up" data-aos-delay="200">
+        我住在 Sugiri 先生的家。他家有三口人，Sugiri 先生，Martinem 女士，和他们的孩子。他们有一个孩子，但是我们没见到他。
+        他们的孩子已经在工作了，但是我不知道他几岁。Sugiri 先生的身体有点儿胖，他的头发卷卷的。他有方脸。
+        个子不高也不矮，腿短短的。大大的眼睛，小小的鼻子，耳朵也小小的。Martinem 女士有圆脸。
+        头发直直的。个子矮矮的。她的身体瘦瘦的。Sugiri 先生是一名店主。Martinem 女士是家庭主妇和劳动者。
+        他们都喜欢吃鸡肉。Sugiri 先生每天从早上到晚上都在看店。
+        我看到了田、河还有养牛的牧场，我玩了泥足球，和学做天贝。
+    </p>
+
+    <div class="image-gallery" data-aos="fade-up" data-aos-delay="400">
+        <a href="Live in 1.jpg" data-lightbox="trip" data-title="Live-in 1">
+            <img src="Live in 1.jpg" alt="Live-in 1" />
+        </a>
+        <a href="Live in 2.jpg" data-lightbox="trip" data-title="Live-in 2">
+            <img src="Live in 2.jpg" alt="Live-in 2" />
+        </a>
+    </div>
+
+    <!-- Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <!-- AOS (Animate on Scroll) JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>

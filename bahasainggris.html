@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUTRIP YOGYAKARTA 2025 - ERIC/8E</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #fff4e6, #ffd6a5);
+            color: #333;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(to bottom, #2d2d2d, #1c1c1c);
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 1s ease-out, fadeIn 1.5s ease-in;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        header a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -5px;
+            background-color: #fff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        header a:hover::after {
+            width: 100%;
+        }
+
+        header a:hover {
+            color: #fff8e1;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+
+        
+        h1, h2, h3, h6 {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        h1 {
+            font-size: 44px;
+            color: #2f2f2f;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        body.dark-mode h1 {
+            color: #f5f5f5;
+        }
+
+        h2 {
+            font-size: 34px;
+            color: #ff4b2b;
+        }
+
+        h3 {
+            font-size: 26px;
+            color: #444;
+            margin: 20px auto 10px auto;
+            max-width: 1000px;
+        }
+
+        h6 {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        p {
+            text-align: justify;
+            margin: 0 auto 30px auto;
+            padding: 0 50px;
+            font-size: 18px;
+            max-width: 1000px;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .image-row {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-row img {
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            width: 400px;
+            height: 400px;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button-group button {
+            background-color: #ff4b2b;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.4s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #e03e1f;
+            transform: scale(1.05);
+        }
+
+        .highlight {
+            color: #d94a38;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #ff4b2b;
+            color: white;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <a href="agama.html">Agama</a>
+        <a href="pkn.html">PPKN</a>
+        <a href="bahasaindonesia.html">Bahasa Indonesia</a>
+        <a href="bahasainggris.html">English</a>
+        <a href="bahasamandarin.html">Mandarin</a>
+        <a href="ips.html">IPS</a>
+    </header>
+
+    <h1>🌄 Writing Edutrip Article</h1>
+    <div class="image-row">
+        <img src="Live in 1.jpg" alt="Live in 1"></img>
+        <img src="Live in 2.jpg" alt="Live in 2"></img>
+    </div>
+
+    <div class="button-group">
+        <button onclick="alert('Great choice! 😊')">👍 Like This Trip</button>
+        <button onclick="smoothScrollToBottom()">📚 Read More</button>
+        <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+    </div>
+
+    <h2>🏡 A 3-Night Stay at Pentingsari</h2>
+    <p>Have you ever experienced living in a remote village near Mt. Merapi? Well, I have, and it was <span class="highlight">fantastic</span>. I, along with some friends, stayed at a tourist village called <span class="highlight">Pentingsari</span>. This simple village is filled with fun activities and friendly, welcoming residents. It’s located in Yogyakarta, precisely in Sleman Regency. We stayed at Mr. Sugiri’s homestay to learn gratitude and experience a peaceful, simpler life. Phones were off, but fun was ON!</p>
+
+    <h3>🎨 Engaging Activities with Meaningful Goals</h3>
+    <p>We made crispy mushrooms that danced like little hands in the wind 🌬️ and created tempeh from scratch. The fresh milk was like a warm hug in a glass 🥛, and the coffee—bitter but earthy—told its own story. The process of using a volcanic mortar and pestle felt like ancient magic. No screens, just friends, nature, and amazing local flavors.</p>
+
+    <h3>🤝 The Friendliest Residents in the World!</h3>
+    <p>From the moment we arrived, the locals treated us like family. Snacks, drinks, smiles—they gave it all. Even when I offered to help, Ms. Martinem just smiled and told me to rest. They respected our beliefs and welcomed us into their community with open arms. ❤️</p>
+
+    <h3>🛎️ The Coziest Village in Yogyakarta</h3>
+    <p>Think cozy mountain villa vibes—clean, breezy, and chill. Even without AC, the rooms were cool. There was Wi-Fi and even a Smart TV for movie nights. And the beds? Like sleeping on marshmallow clouds ☁️. Super comfy!</p>
+
+    <h3>✨ Conclusion</h3>
+    <p><span class="highlight">Pentingsari Village</span> is where fun meets culture and hospitality. I’d rate this a strong 10/10. Perfect for disconnecting from tech and reconnecting with people and nature. Thanks for joining me on this virtual trip! 🙌</p>
+
+    <h3>👦 Gregorius Eric Ghozali</h3>
+
+
+
+    <footer>
+        &copy; 2025 Eric | Kelas 8E | Edutrip Yogyakarta
+    </footer>
+
+    <script>
+        function smoothScrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

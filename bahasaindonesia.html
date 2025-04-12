@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUTRIP YOGYAKARTA 2025 - ERIC/8E</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            opacity: 1;
+            transition: opacity 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+        }
+
+        body.page-exit {
+            opacity: 0;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #8f1414, #a62828);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            animation: slideDown 1s ease;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: center;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        header a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: bisque;
+            transition: width 0.3s;
+        }
+
+        header a:hover::after {
+            width: 100%;
+        }
+
+        header a:hover {
+            color: bisque;
+        }
+
+        .toggle-darkmode {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .toggle-darkmode:hover {
+            background-color: #fff;
+            color: #8f1414;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 5px;
+            color: #666;
+        }
+
+        .artikel-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .artikel-container img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .artikel-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+        }
+
+        .artikel-teks {
+            flex: 1 1 600px;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .link-lanjutan {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .link-lanjutan a {
+            color: #6a1b9a;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .link-lanjutan a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-custom {
+            background-color: #8f1414;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #a62828;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="agama.html">Agama</a>
+            <a href="pkn.html">PPKN</a>
+            <a href="bahasaindonesia.html">Bahasa Indonesia</a>
+            <a href="bahasainggris.html">English</a>
+            <a href="bahasamandarin.html">Mandarin</a>
+            <a href="ips.html">IPS</a>
+        </div>
+        <button class="toggle-darkmode" onclick="toggleDarkMode()">🌓 Mode Gelap</button>
+    </header>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+    <!-- rest of the body remains the same -->
+
+
+    <main>
+        <h1>Artikel Ulasan Novotel Solo</h1>
+        <h2>Gregorius Eric Ghozali 8E/16</h2>
+
+        <div class="artikel-container">
+            <div class="artikel-teks">
+                <p>Selama saya berada di Solo dari tanggal 13 Maret hingga 14 Maret 2025, saya mendapat kesempatan untuk menginap di hotel Novotel Solo. Hotel Novotel Solo adalah salah satu dari berbagai cabang di Asia. Total kamar yang dimiliki hotel ini adalah 145 kamar. Novotel Solo memiliki berbagai macam fasilitas untuk tamu hotel. Hotel ini terletak di Jalan Slamet Riyadi, Solo. Pemiliknya adalah Sun Motor Group dan dikelola oleh Accor. Novotel Solo resmi dibuka pada tanggal 1 Juni 1997.</p>
+
+                <p>Saat pertama kali masuk ke lobi hotel, saya kagum dengan detail dekorasinya. Lobi lumayan luas dan tinggi, dihiasi dekorasi khas Indonesia seperti batik dan wayang, serta tanaman palsu yang indah. Terdapat bar es krim dan Grand Piano yang sayangnya tidak bisa digunakan umum. Pintu masuk memiliki ukiran batik dari perunggu yang bersih dan estetis. Lantainya terbuat dari marmer.</p>
+
+                <p>Namun, lorong di luar kamar berbau rokok dan cukup mengganggu. Saya menginap di Kamar Superior dengan Twin Beds. Kamarnya cukup luas (28 m²), lengkap dengan Smart TV, brankas, kulkas mini, dan sofa. Lantainya kombinasi kayu dan marmer, terasa dingin dan nyaman. Kasur sangat bersih, empuk, dan sejuk.</p>
+
+                <p>Kamar mandi juga berlantai marmer dan layak digunakan. Keesokan harinya, saya sarapan di restoran prasmanan hotel. Makanannya enak dan beragam, namun ruang makan yang kecil terasa sempit dan ramai karena terlalu banyak kursi dan sofa.</p>
+
+                <p>Sebelum ke Solo, saya sempat menginap di Grand Mercure Adi Sucipto, Yogyakarta. Secara pribadi, saya merasa Novotel Solo lebih unggul dalam hal kenyamanan dan fasilitas. Namun, restoran Grand Mercure lebih luas dan variasi makanannya lebih banyak.</p>
+
+                <p>Kesimpulannya, Novotel Solo sangat cocok untuk beristirahat di Solo. Kamarnya nyaman, perabotnya lengkap, dan pelayanannya baik. Disarankan memilih tipe Kamar Superior Twin Beds jika menginap berdua. Cobalah Novotel Solo jika berkunjung ke Surakarta!</p>
+            </div>
+            <div>
+                <img src="Novotel luar.jpg" alt="Hotel Novotel Solo" id="imgPreview">
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="btn-custom" onclick="window.location.href='https://all.accor.com/hotel/0545/index.id.shtml'">Kunjungi Website Novotel</button>
+            <button class="btn-custom" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="margin-left: 20px;">Kembali ke Atas</button>
+        </div>
+
+        <div class="link-lanjutan">
+            <a href="https://www.canva.com/design/DAGiCEshVWY/J9zKr_ONx1N9HQKSjrPdEA/view?utm_content=DAGiCEshVWY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf92eb56912">
+                Klik di sini untuk mempelajari lebih lanjut.
+            </a>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Preview Gambar">
+    </div>
+
+    <script>
+        // Transisi halaman keluar
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                if (!link.href.startsWith('#') && link.target !== '_blank') {
+                    e.preventDefault();
+                    document.body.classList.add('page-exit');
+                    setTimeout(() => {
+                        window.location = link.href;
+                    }, 500);
+                }
+            });
+        });
+
+        // Lightbox
+        const img = document.getElementById('imgPreview');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        });
+    </script>
+</body>
+</html>
